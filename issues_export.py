@@ -39,7 +39,14 @@ def export_all(accountname, repo_slug, password):
 
 
 if __name__ == '__main__':
+    # TODO: implement following cli
+    # Usage:
+    # python issues_export.py <accountname> <repo_slug> [<password>] [--format=[json|csv]] [--short-user]
     import sys
+    if len(sys.argv) != 4:
+        print "usage:"
+        print sys.argv[0], "<accountname> <repo_slug> <password>"
+        sys.exit(0)
     accountname = sys.argv[1]
     repo_slug = sys.argv[2]
     password = sys.argv[3]
